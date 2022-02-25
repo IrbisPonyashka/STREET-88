@@ -115,12 +115,25 @@ body::after{
 /* NAV END */
 
 /* HEADER-CONTENT START */
-
+/* .header-content {
+    position: relative;
+    
+}
+.header__content-img {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+} */
 .header-content{
     background: url(../image/food-burger-wallpaper-preview\ 1.jpg) no-repeat center /cover;
     padding: 167px 0 179px 0;
     margin-top: 5px;
-}
+} 
 
 /* content__top START */
 
@@ -228,17 +241,50 @@ body::after{
     position: relative;
     
 }
+ /* ФНИМАЦИЯ, способ-1й */
 .main__item-image::after{
+    content: url(../image/Vector.png);
+    display: block;
+    position: absolute;
+    width: 62px;
+    height: 60px;
+    top: 40%;
+    left: 40%;
+    opacity: 0;
+    transition: opacity 0.5s, transform 0.6s;
+}
+.main__item-image::before{
     content: '';
     display: block;
+    position: absolute;
     background: url(../image/Rectangle\ 8.png);
     width: 100%;
     height: 100%;
+    top: 0;
+    left: 0;
     position: absolute;
-    top: 0px;
-    left: 0px;
     opacity: 0;
-    transition: opacity 0.5s;
+    transition: opacity 0.5s, ;
+}
+.main__item-image:hover::after,
+.main__item-image:hover::before{
+    opacity: 0.8;
+}
+.main__item-image:hover::after{
+    transform: rotate(360deg);
+} 
+/* АНИМЦАИЯ, способ-2й(не актуален)
+.main__item-image::after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../image/Rectangle\ 8.png);
+    opacity: 0;
+    transition: all 0.5s;
 }
 .main__item-image:hover::after{
     opacity: 0.8;
@@ -256,7 +302,7 @@ body::after{
 .main__item i:hover{
     transform: rotateZ(360deg);
     opacity: 1;
-}
+} */ 
 
 .main__title{
     font-size: 19px;
@@ -279,7 +325,7 @@ body::after{
 }
 .footer__top-map{
    width: 100%;
-
+   height: 500px;
 }
 .footer__top-title{
     font-size: 50px;
@@ -446,6 +492,9 @@ body::after{
     .content__top-text{
         font-size: 15px;
         line-height: 18px;
+    }
+    .footer__top-map {
+        height: 100px;
     }
 }
 /* MEDIA END */
